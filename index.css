@@ -54,4 +54,5 @@ div[hover] {
     margin-left: 1px;
     margin-top: auto;
     margin-bottom: 3px;
+    position: fixed;
 }
