@@ -38,11 +38,11 @@ function updateHover() {
         count += 1;
     } else {
         if (now_y !== text.clientHeight || !now_y) {
+            now_y = text.clientHeight + 8;
+        }
+        if (count > 0) {
             now_y = text.clientHeight + 4;
         }
-        // if (count > 0) {
-        //     now_y = text.clientHeight + 4;
-        // }
     }
 
     temp = document.createElement("p");
