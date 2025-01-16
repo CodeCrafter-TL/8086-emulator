@@ -1,5 +1,7 @@
 const hover = document.querySelector('div[hover]');
+hover.style.opacity = 0;
 const text = document.querySelector("p[text]");
+console.log(text.clientTop, text.clientHeight)
 let temp = null;
 let now_y = 0;
 let count = 0;
@@ -8,8 +10,11 @@ function updateHover() {
     if (temp) {
         temp.remove();
     }
-    if (now_y !== text.clientTop + text.clientHeight || !now_y) {
-        now_y = text.clientTop + text + 4;
+    if (now_y !== text.clientHeight || !now_y) {
+        now_y = text.clientHeight;
+    }
+    if (count > 0) {
+        now_y = text.clientHeight + 4;
     }
 
     temp = document.createElement("p");
@@ -18,9 +23,10 @@ function updateHover() {
     temp.style.opacity = 0;
     temp.style.position = "absolute";
     setTimeout(() => {
+        hover.style.opacity = 1;
         hover.style.left = temp.clientWidth + 10 + "px";
         hover.style.top = now_y + 'px';
-    }, 10);
+    }, 40);
     document.body.appendChild(temp);
     count += 1;
 }
