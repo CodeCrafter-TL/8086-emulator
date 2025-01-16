@@ -9,10 +9,7 @@ function updateHover() {
         temp.remove();
     }
     if (now_y !== text.clientTop + text.clientHeight || !now_y) {
-        now_y = text.clientTop + text.clientHeight;
-    }
-    if (count > 0) {
-        now_y += 4;
+        now_y = text.clientTop + text + 4;
     }
 
     temp = document.createElement("p");
