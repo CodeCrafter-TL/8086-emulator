@@ -3,6 +3,7 @@ hover.style.opacity = 0;
 const text = document.querySelector("p[text]");
 console.log(text.clientTop, text.clientHeight)
 let temp = null;
+const height = 16;
 let now_y = 0;
 let count = 0;
 
@@ -60,12 +61,12 @@ function updateHover() {
 document.addEventListener("keypress", (event) => {
     let key = event.key;
     if (key === "Enter") {
-        text.innerHTML += "<br><span style=\"color: black; width: 0.1px;\">1</span>";
+        text.innerHTML += "<br><span style=\"color: black; display: inline-block; width: 0;\">1</span>";
     } else if (key === "Backspace") {
         text.innerHTML = text.innerHTML.slice(0, -1);
     } else {
-        if (text.innerHTML.endsWith("<span style=\"color: black; width: 0.1px;\">1</span>")) {
-            text.innerHTML = text.innerHTML.replace("<span style=\"color: black; width: 0.1px;\">1</span>", "");
+        if (text.innerHTML.endsWith("<span style=\"color: black; display: inline-block; width: 0;\">1</span>")) {
+            text.innerHTML = text.innerHTML.replace("<span style=\"color: black; display: inline-block; width: 0;\">1</span>", "");
         }
         text.innerHTML += key;
     }
